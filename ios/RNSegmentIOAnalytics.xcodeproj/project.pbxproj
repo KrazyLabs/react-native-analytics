@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		63173C8F496A633D9D7F304E /* libPods-RNSegmentIOAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7F0E10E7A9687834BD0319 /* libPods-RNSegmentIOAnalytics.a */; };
+		14D0E6031F2A695B009E2D2A /* Analytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D0E6021F2A695B009E2D2A /* Analytics.framework */; };
 		EA880B921D04119B00FA807F /* RNSegmentIOAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = EA880B911D04119B00FA807F /* RNSegmentIOAnalytics.m */; };
 /* End PBXBuildFile section */
 
@@ -25,9 +25,8 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNSegmentIOAnalytics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNSegmentIOAnalytics.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		911EBC6F8E6098E07AD65EC3 /* Pods-RNSegmentIOAnalytics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNSegmentIOAnalytics.release.xcconfig"; path = "Pods/Target Support Files/Pods-RNSegmentIOAnalytics/Pods-RNSegmentIOAnalytics.release.xcconfig"; sourceTree = "<group>"; };
+		14D0E6021F2A695B009E2D2A /* Analytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Analytics.framework; path = "/Users/sean/projects/kcl/deals-mobile/ios/Pods/../build/Debug-iphoneos/Analytics/Analytics.framework"; sourceTree = "<absolute>"; };
 		9C7F0E10E7A9687834BD0319 /* libPods-RNSegmentIOAnalytics.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNSegmentIOAnalytics.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFAF37A7EC8CC1920F823CEB /* Pods-RNSegmentIOAnalytics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNSegmentIOAnalytics.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RNSegmentIOAnalytics/Pods-RNSegmentIOAnalytics.debug.xcconfig"; sourceTree = "<group>"; };
 		EA880B901D04119B00FA807F /* RNSegmentIOAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNSegmentIOAnalytics.h; sourceTree = "<group>"; };
 		EA880B911D04119B00FA807F /* RNSegmentIOAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNSegmentIOAnalytics.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -37,7 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63173C8F496A633D9D7F304E /* libPods-RNSegmentIOAnalytics.a in Frameworks */,
+				14D0E6031F2A695B009E2D2A /* Analytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +46,7 @@
 		019543AF0250097C7BAE315D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				14D0E6021F2A695B009E2D2A /* Analytics.framework */,
 				9C7F0E10E7A9687834BD0319 /* libPods-RNSegmentIOAnalytics.a */,
 			);
 			name = Frameworks;
@@ -65,18 +65,8 @@
 			children = (
 				EA880B8F1D04119B00FA807F /* RNAnalytics */,
 				134814211AA4EA7D00B7C361 /* Products */,
-				A5039B0CE1F0420D00CA038A /* Pods */,
 				019543AF0250097C7BAE315D /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		A5039B0CE1F0420D00CA038A /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BFAF37A7EC8CC1920F823CEB /* Pods-RNSegmentIOAnalytics.debug.xcconfig */,
-				911EBC6F8E6098E07AD65EC3 /* Pods-RNSegmentIOAnalytics.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		EA880B8F1D04119B00FA807F /* RNAnalytics */ = {
@@ -95,11 +85,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNSegmentIOAnalytics" */;
 			buildPhases = (
-				F124868C6CA48D633754D72E /* [CP] Check Pods Manifest.lock */,
 				58B511D71A9E6C8500147676 /* Sources */,
 				58B511D81A9E6C8500147676 /* Frameworks */,
 				58B511D91A9E6C8500147676 /* CopyFiles */,
-				62F1C12258A16A4923216034 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,39 +128,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		62F1C12258A16A4923216034 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RNSegmentIOAnalytics/Pods-RNSegmentIOAnalytics-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F124868C6CA48D633754D72E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		58B511D71A9E6C8500147676 /* Sources */ = {
@@ -262,8 +217,12 @@
 		};
 		58B511F01A9E6C8500147676 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFAF37A7EC8CC1920F823CEB /* Pods-RNSegmentIOAnalytics.debug.xcconfig */;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../../../../ios/Pods/Analytics/Analytics/**",
+				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"$(inherited)",
@@ -275,8 +234,12 @@
 		};
 		58B511F11A9E6C8500147676 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 911EBC6F8E6098E07AD65EC3 /* Pods-RNSegmentIOAnalytics.release.xcconfig */;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../../../../ios/Pods/Analytics/Analytics/**",
+				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"$(inherited)",

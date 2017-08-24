@@ -83,6 +83,14 @@ public class RNSegmentIOAnalyticsModule extends ReactContextBaseJavaModule {
     mAnalytics.screen(null, screenName, toProperties(properties));
   }
 
+  @ReactMethod
+  public void page(String pageName, ReadableMap properties) {
+    if (!mEnabled) {
+      return;
+    }
+    mAnalytics.page(null, pageName, toProperties(properties));
+  }
+
   /*
    https://segment.com/docs/libraries/android/#flushing
    */

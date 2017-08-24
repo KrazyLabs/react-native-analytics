@@ -40,14 +40,11 @@ public class RNSegmentIOAnalyticsModule extends ReactContextBaseJavaModule {
   public void setup(String writeKey, Integer flushAt, Boolean shouldUseLocationServices) {
     if (mAnalytics == null) {
       Context context = getReactApplicationContext().getApplicationContext();
-      Builder builder = new Analytics.Builder(context, writeKey);
-      builder.flushQueueSize(flushAt);
+      mAnalytics = new Analytics.Builder(context, writeKey)
+            .trackApplicationLifecycleEvents()
+            .flushQueueSize(flushAt)
+            .build();
 
-      if (mDebug) {
-        builder.logLevel(Analytics.LogLevel.DEBUG);
-      }
-
-      mAnalytics = builder.build();
     } else {
       log("Segment Analytics already initialized. Refusing to re-initialize.");
     }

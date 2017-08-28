@@ -1,6 +1,6 @@
 {
   "name": "@krazylabs/react-native-analytics",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "The Ananlytics API you've always wanted. Now for React Native. Powered by Segment.",
   "repository": {
     "type": "git",
@@ -21,7 +21,8 @@
       "name": "Tal Kain",
       "email": "tal@kain.net",
       "url": "https://www.smore.com"
-    }, {
+    },
+    {
       "name": "Tony Xiao",
       "email": "tonyx.ca@gmail.com",
       "url": "https://tonyxiao.com"
@@ -35,7 +36,8 @@
     {
       "name": "talkain",
       "email": "tal@kain.net"
-    }, {
+    },
+    {
       "name": "tonyxiao",
       "email": "tonyx.ca@gmail.com"
     }

@@ -18,6 +18,7 @@ RCT_EXPORT_METHOD(setup:(NSString*)configKey :(NSUInteger)flushAt :(BOOL)shouldU
 {
     SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:configKey];
     configuration.flushAt = flushAt;
+    configuration.trackApplicationLifecycleEvents = YES; // Enable this to record certain application events automatically!
     configuration.shouldUseLocationServices = shouldUseLocationServices;
     [SEGAnalytics setupWithConfiguration:configuration];
 }

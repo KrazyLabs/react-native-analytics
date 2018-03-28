@@ -14,33 +14,24 @@
 
 RCT_EXPORT_MODULE()
 
-RCT_EXPORT_METHOD(setup:(NSString*)configKey :(NSUInteger)flushAt :(BOOL)shouldUseLocationServices)
-{
-    SEGAnalyticsConfiguration *configuration = [SEGAnalyticsConfiguration configurationWithWriteKey:configKey];
-    configuration.flushAt = flushAt;
-    configuration.trackApplicationLifecycleEvents = YES; // Enable this to record certain application events automatically!
-    configuration.shouldUseLocationServices = shouldUseLocationServices;
-    [SEGAnalytics setupWithConfiguration:configuration];
-}
-
 /*
  https://segment.com/docs/libraries/ios/#identify
  */
-RCT_EXPORT_METHOD(identify:(NSString*)userId traits:(NSDictionary *)traits) {
-    [[SEGAnalytics sharedAnalytics] identify:userId traits:traits];
+RCT_EXPORT_METHOD(identify:(NSString*)userId traits:(NSDictionary *)traits options:(NSDictionary *)options) {
+    [[SEGAnalytics sharedAnalytics] identify:userId traits:traits options:options];
 }
 
 /*
  https://segment.com/docs/libraries/ios/#track
  */
-RCT_EXPORT_METHOD(track:(NSString*)event properties:(NSDictionary *)properties) {
-    [[SEGAnalytics sharedAnalytics] track:event properties:properties];
+RCT_EXPORT_METHOD(track:(NSString*)event properties:(NSDictionary *)properties options:(NSDictionary *)options) {
+    [[SEGAnalytics sharedAnalytics] track:event properties:properties options:options];
 }
 /*
  https://segment.com/docs/libraries/ios/#screen
  */
-RCT_EXPORT_METHOD(screen:(NSString*)screenName properties:(NSDictionary *)properties) {
-    [[SEGAnalytics sharedAnalytics] screen:screenName properties:properties];
+RCT_EXPORT_METHOD(screen:(NSString*)screenName properties:(NSDictionary *)properties options:(NSDictionary *)options) {
+    [[SEGAnalytics sharedAnalytics] screen:screenName properties:properties options:options];
 }
 
 /*

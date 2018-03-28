@@ -1,7 +1,12 @@
 .idea/
 
 android/build
-RNSegmentIOAnalytics.xcodeproj/xcuserdata
+*.iml
+
 node_modules/
 
 ios/Pods/
+xcuserdata/
+
+
+yarn-error.log

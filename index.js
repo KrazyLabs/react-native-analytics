@@ -19,38 +19,27 @@ const NativeRNSegmentIOAnalytics = NativeModules.RNSegmentIOAnalytics
 
 export default {
     /*
-     * Setting up the Segment IO Analytics service
-     *
-     * @param configKey https://segment.com/docs/libraries/ios/#configuration or https://segment.com/docs/libraries/android/#customizing-the-client
-     * @param flushAt https://segment.com/docs/libraries/ios/#flushing or https://segment.com/docs/libraries/android/#customizing-the-client
-     * @param shouldUseLocationServices https://segment.com/docs/libraries/ios/#location-services
-     */
-    setup: function (configKey: string, flushAt: number = 20, shouldUseLocationServices: bool = false) {
-        NativeRNSegmentIOAnalytics.setup(configKey, flushAt, shouldUseLocationServices)
-    },
-
-    /*
      * https://segment.com/docs/libraries/ios/#identify
      * https://segment.com/docs/libraries/android/#identify
      */
-    identify: function (userId: string, traits: ?Object) {
-        NativeRNSegmentIOAnalytics.identify(userId, traits || {})
+    identify: function (userId: string, traits: ?Object, options: ?Object) {
+        NativeRNSegmentIOAnalytics.identify(userId, traits || {}, options || {})
     },
 
     /*
      * https://segment.com/docs/libraries/ios/#track
      * https://segment.com/docs/libraries/android/#track
      */
-    track: function (event: string, properties: ?Object) {
-        NativeRNSegmentIOAnalytics.track(event, properties || {})
+    track: function (event: string, properties: ?Object, options: ?Object) {
+        NativeRNSegmentIOAnalytics.track(event, properties || {}, options || {})
     },
 
     /*
      * https://segment.com/docs/libraries/ios/#screen
      * https://segment.com/docs/libraries/android/#screen
      */
-    screen: function (screenName: string, properties: ?Object) {
-        NativeRNSegmentIOAnalytics.screen(screenName, properties || {})
+    screen: function (screenName: string, properties: ?Object, options: ?Object) {
+        NativeRNSegmentIOAnalytics.screen(screenName, properties || {}, options || {})
     },
 
     /*
@@ -69,15 +58,7 @@ export default {
         NativeRNSegmentIOAnalytics.flush()
     },
 
-    /*
-     * https://segment.com/docs/libraries/ios/#logging
-     * https://segment.com/docs/libraries/android/#debugging
-     */
-    debug: function (isEnabled: bool) {
-        NativeRNSegmentIOAnalytics.debug(isEnabled)
-    },
-
-    /*
+   /*
      * https://segment.com/docs/libraries/ios/#opt-out
      * https://segment.com/docs/libraries/android/#context
      */

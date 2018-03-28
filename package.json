@@ -1,6 +1,6 @@
 {
   "name": "@krazylabs/react-native-analytics",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "description": "The Ananlytics API you've always wanted. Now for React Native. Powered by Segment.",
   "repository": {
     "type": "git",

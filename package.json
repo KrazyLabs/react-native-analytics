@@ -1,7 +1,7 @@
 {
   "name": "@krazylabs/react-native-analytics",
-  "version": "2.0.0",
-  "description": "The Ananlytics API you've always wanted. Now for React Native. Powered by Segment.",
+  "version": "3.0.0",
+  "description": "The Analytics API you've always wanted. Now for React Native. Powered by Segment.",
   "repository": {
     "type": "git",
     "url": "git@github.com:krazylabs/react-native-analytics.git"
@@ -44,6 +44,6 @@
   ],
   "homepage": "https://github.com/tonyxiao/react-native-analytics",
   "peerDependencies": {
-    "react-native": ">=0.7.0"
+    "react-native": "^0.61.2"
   }
 }

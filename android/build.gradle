@@ -1,25 +1,31 @@
 buildscript {
-    repositories {
-        jcenter()
-    }
+    if (project == rootProject) {
+      repositories {
+          jcenter()
+      }
 
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.3.0'
+      dependencies {
+          classpath 'com.android.tools.build:gradle:3.5.0'
+      }
     }
 }
 
 apply plugin: 'com.android.library'
 
+def safeExtGet(prop, fallback) {
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion safeExtGet('compileSdkVersion', 28)
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion safeExtGet('minSdkVersion', 16)
+        targetSdkVersion safeExtGet('targetSdkVersion', 28)
+        versionCode 2
+        versionName "1.1"
     }
+
     lintOptions {
         abortOnError false
     }
@@ -30,6 +36,6 @@ repositories {
 }
 
 dependencies {
-    compile 'com.facebook.react:react-native:0.19.+'
+    implementation "com.facebook.react:react-native:${safeExtGet('reactNativeVersion', '+')}"
     compile 'com.segment.analytics.android:analytics:4+'
 }

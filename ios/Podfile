@@ -9,6 +9,6 @@ target 'RNSegmentIOAnalytics' do
     'RCTNetwork',
     'RCTWebSocket',
   ]
-  pod 'Analytics', '~> 3.2'
+  pod 'Analytics', '~> 3.7.0'
 
 end

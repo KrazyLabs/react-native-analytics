@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
   s.source_files  = "ios/**/*.{h,m}"
 
   s.dependency 'React'
-  s.dependency 'Analytics', '3.7.0'
+  s.dependency 'Analytics', '~> 4.0'
 end

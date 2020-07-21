@@ -43,6 +43,14 @@ export default {
     },
 
     /*
+     * https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#anonymousid
+     * https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#anonymousid
+     */
+    anonymousId: function () {
+        return NativeRNSegmentIOAnalytics.anonymousId()
+    },
+
+    /*
      * https://segment.com/docs/libraries/ios/#reset
      * https://segment.com/docs/libraries/android/#how-do-you-handle-unique-identifiers-
      */

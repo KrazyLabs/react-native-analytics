@@ -27,11 +27,19 @@ RCT_EXPORT_METHOD(identify:(NSString*)userId traits:(NSDictionary *)traits optio
 RCT_EXPORT_METHOD(track:(NSString*)event properties:(NSDictionary *)properties options:(NSDictionary *)options) {
     [[SEGAnalytics sharedAnalytics] track:event properties:properties options:options];
 }
+
 /*
  https://segment.com/docs/libraries/ios/#screen
  */
 RCT_EXPORT_METHOD(screen:(NSString*)screenName properties:(NSDictionary *)properties options:(NSDictionary *)options) {
     [[SEGAnalytics sharedAnalytics] screen:screenName properties:properties options:options];
+}
+
+/*
+ https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#anonymousid
+ */
+RCT_EXPORT_METHOD(anonymousId) {
+    return [[SEGAnalytics sharedAnalytics] getAnonymousId];
 }
 
 /*

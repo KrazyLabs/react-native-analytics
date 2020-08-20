@@ -38,8 +38,10 @@ RCT_EXPORT_METHOD(screen:(NSString*)screenName properties:(NSDictionary *)proper
 /*
  https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#anonymousid
  */
-RCT_EXPORT_METHOD(anonymousId) {
-    return [[SEGAnalytics sharedAnalytics] getAnonymousId];
+RCT_REMAP_METHOD(anonymousId,
+                 anonymousIdWithResolver:(RCTPromiseResolveBlock)resolve
+                 rejecter:(RCTPromiseRejectBlock)reject) {
+    resolve([[SEGAnalytics sharedAnalytics] getAnonymousId]);
 }
 
 /*

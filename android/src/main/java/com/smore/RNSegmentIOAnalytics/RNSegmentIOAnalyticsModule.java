@@ -3,6 +3,7 @@ package com.smore.RNSegmentIOAnalytics;
 import androidx.annotation.Nullable;
 import android.util.Log;
 
+import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
@@ -68,11 +69,12 @@ public class RNSegmentIOAnalyticsModule extends ReactContextBaseJavaModule {
    https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#anonymousid
    */
   @ReactMethod
-  public String anonymousId() {
+  public void anonymousId(Promise promise) {
     if (!mEnabled) {
-      return "";
+      promise.resolve("");
+    } else {
+      promise.resolve(Analytics.with(getReactApplicationContext().getApplicationContext()).getAnalyticsContext().traits().anonymousId());
     }
-    return Analytics.with(getReactApplicationContext().getApplicationContext()).getAnalyticsContext().traits().anonymousId();
   }
 
   /*

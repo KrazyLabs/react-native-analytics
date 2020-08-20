@@ -46,8 +46,12 @@ export default {
      * https://segment.com/docs/connections/sources/catalog/libraries/mobile/ios/#anonymousid
      * https://segment.com/docs/connections/sources/catalog/libraries/mobile/android/#anonymousid
      */
-    anonymousId: function () {
-        return NativeRNSegmentIOAnalytics.anonymousId()
+    anonymousId: async function () {
+        try {
+            return await NativeRNSegmentIOAnalytics.anonymousId()
+        } catch (err) {
+            return ''
+        }
     },
 
     /*

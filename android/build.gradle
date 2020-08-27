@@ -1,11 +1,12 @@
 buildscript {
     if (project == rootProject) {
       repositories {
+          google()
           jcenter()
       }
 
       dependencies {
-          classpath 'com.android.tools.build:gradle:3.5.0'
+          classpath 'com.android.tools.build:gradle:4.0.0'
       }
     }
 }
@@ -17,11 +18,11 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
-    compileSdkVersion safeExtGet('compileSdkVersion', 28)
+    compileSdkVersion safeExtGet('compileSdkVersion', 29)
 
     defaultConfig {
-        minSdkVersion safeExtGet('minSdkVersion', 16)
-        targetSdkVersion safeExtGet('targetSdkVersion', 28)
+        minSdkVersion safeExtGet('minSdkVersion', 21)
+        targetSdkVersion safeExtGet('targetSdkVersion', 29)
         versionCode 2
         versionName "1.1"
     }
@@ -29,13 +30,19 @@ android {
     lintOptions {
         abortOnError false
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 repositories {
-    mavenCentral()
+    google()
+    jcenter()
 }
 
 dependencies {
     implementation "com.facebook.react:react-native:${safeExtGet('reactNativeVersion', '+')}"
-    compile 'com.segment.analytics.android:analytics:4+'
+    api 'com.segment.analytics.android:analytics:4+'
 }
